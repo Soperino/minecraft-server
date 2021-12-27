@@ -1,0 +1,26 @@
+#This is an info file for general information
+#Makes it easier to differentiate between servers
+#Version 1.0
+
+server-name: #server name
+  basic-info: #general information
+    description: #server MOTD/description
+    mc-version: #change this to current minecraft version of server jar
+  server-info: #behind-the-scenes info
+    ip: #server address
+    port: 25565 #server port; minecraft defaults to 25565
+    srv: true #change to false if this server does not have a SRV DNS record
+    is-modded: false
+    is-public: true
+      whitelist: #["user1","user2"]
+    server-jar: #server jar currently in use
+  meta-info: #Info about info
+    created-on: 0000-00-00 00:00:00
+      created-by: #who created this server
+      created-ver: #version of minecraft server was created on
+      deploy-date: 0000-00-00 00:00:00 #day server was opened to public
+      deploy-jar: #server jar the server deployed with
+    is-retired: false #change to false if server is not meant to be active
+      retired-on: #0000-00-00
+      retired-ver: #version of minecraft server was retired on
+      retire-jar: #server jar the server was retired with

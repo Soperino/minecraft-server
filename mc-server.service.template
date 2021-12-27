@@ -1,0 +1,19 @@
+[Unit]
+Description=[SERVER NAME]
+After=local-fs.target network.target
+
+[Service]
+WorkingDirectory=[SERVER DIRECTORY]
+User=USERNAME
+Group=USERNAME
+Type=forking
+
+Environment="SERVERNAME=#Short Server Name"
+
+ExecStart=/usr/bin/screen -dmS $SERVERNAME -t console ./start.sh
+
+ExecStop=/usr/bin/screen -p console -S $SERVERNAME -X eval 'stuff \015' 'stuff \"stop\"\015'
+ExecStop=/bin/bash -c "while ps -p $MAINPID > /dev/null; do /bin/sleep 1; done"
+
+[Install]
+WantedBy=multi-user.target
