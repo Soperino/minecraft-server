@@ -1,14 +1,14 @@
 [Unit]
-Description=[SERVER NAME]
+Description=[SERVER_NAME]
 After=local-fs.target network.target
 
 [Service]
-WorkingDirectory=[SERVER DIRECTORY]
-User=USERNAME
-Group=USERNAME
+WorkingDirectory=[SERVER_DIRECTORY]
+User=[USERNAME]
+Group=[USERNAME]
 Type=forking
 
-Environment="SERVERNAME=#Short Server Name"
+Environment="SERVERNAME=[SHORT_SERVER_NAME]"
 
 ExecStart=/usr/bin/screen -dmS $SERVERNAME -t console ./start.sh
 
