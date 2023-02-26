@@ -10,6 +10,8 @@ Type=forking
 
 Environment="SERVERNAME=[SHORT_SERVER_NAME]"
 
+# Do not edit anything beyond this point unless you know what you are doing.
+# Please ensure that you have 'screen' installed for the following to work:
 ExecStart=/usr/bin/screen -dmS $SERVERNAME -t console ./start.sh
 
 ExecStop=/usr/bin/screen -p console -S $SERVERNAME -X eval 'stuff \015' 'stuff \"stop\"\015'
